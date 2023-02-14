@@ -57,14 +57,14 @@ export class SignupComponent {
 
   }
 
-  saveUser() {
-    this.user = this.registerForm.value;
-    this.authDetailService.saveUser(this.user).subscribe((response: any) => {
-      console.log(response);
+  // saveUser() {
+  //   this.user = this.registerForm.value;
+  //   this.authDetailService.saveUser(this.user).subscribe((response: any) => {
+  //     console.log(response);
 
-      this.users.push({ name: response.name});
-    });
-  }
+  //     this.users.push({ name: response.name});
+  //   });
+  // }
 
   registerUser() {
     this.user = this.registerForm.value;
@@ -72,14 +72,13 @@ export class SignupComponent {
       .saveUserTyped(this.user)
       .subscribe((response: UserInfo) => {
         console.log(response);
-
-        this.users.push({ name: response.name});
-        this.usersTyped.push({
-          name: response.name,
-      //job: response.job,
-          id: response.id,
-          createdAt: response.createdAt,
-        });
+        // this.users.push({ name: response.name});
+        // this.usersTyped.push({
+        //   name: response.name,
+        //   //job: response.job,
+        //   id: response.id,
+        //   createdAt: response.createdAt,
+        // });
       });
   }
 
