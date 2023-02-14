@@ -6,16 +6,14 @@ import {
   HttpResponse,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User, UserInfo } from '../user';
+import { dataModel } from '../user';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthDetailService {
-  subscribe(arg0: (response: UserInfo) => void) {
-    throw new Error('Method not implemented.');
-  }
+ 
   constructor(private http: HttpClient) {}
   
   // public getUsers(user: User): Observable<any> {
@@ -23,14 +21,14 @@ export class AuthDetailService {
   //   return this.http.get(url);
   // }
 
-  public saveUser(user: User): Observable<any> {
-    const url = 'https://reqres.in/api/users';
-    return this.http.post<any>(url, user);
-  }
+  // public saveUser(user: User): Observable<any> {
+  //   const url = 'https://reqres.in/api/users';
+  //   return this.http.post<any>(url, user);
+  // }
 
-  public saveUserTyped(user: User): Observable<UserInfo> {
-    const url = 'https://reqres.in/api/users';
-    return this.http.post<UserInfo>(url, user);
+  public saveUserTyped(data: dataModel): Observable<dataModel> {
+    const url = 'http://localhost:3000/posts';
+    return this.http.post<dataModel>(url, data);
   }
 
 

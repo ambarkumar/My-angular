@@ -6,7 +6,7 @@ import { Router } from "@angular/router";
 import { DOCUMENT } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 import { AuthDetailService } from 'src/app/services/auth-detail.service';
-import { User, UserInfo } from 'src/app/user';
+import { dataModel } from 'src/app/user';
 
 @Component({
   selector: 'app-signup',
@@ -16,11 +16,11 @@ import { User, UserInfo } from 'src/app/user';
 export class SignupComponent {
   tab: number = 2;
 
-  user!: User;
-  users: User[] = [];
+  // user!: User;
+  // users: User[] = [];
 
-  usersTyped: UserInfo[] = [];
-
+   //usersTyped: dataModel[] = [];
+   //users: User[] = [];
 
 
   public isCollapsed = false;
@@ -37,15 +37,16 @@ export class SignupComponent {
   msg:any;
   modalReference: any;
   userss: any;
+  dataModel: any;
   constructor(private toastr: ToastrService, private authDetailService: AuthDetailService, @Inject(DOCUMENT) document: Document, private fb:FormBuilder, config: NgbModalConfig, private modalService: NgbModal, private router: Router) { 
     
   this.registerForm= this.fb.group({
-    name: ['',[Validators.required, Validators.minLength(2),
+    firstName: ['',[Validators.required, Validators.minLength(2),
       Validators.pattern('^[_A-z0-9]*((-|s)*[_A-z0-9])*$')]],
-    // lastname: ['',[Validators.required]],
-    // mobilenumber: ['',[Validators.required, Validators.maxLength(10), Validators.pattern(/^[6-9]\d{9}$/)]],
-    //email: ['',[Validators.email, Validators.required,Validators.pattern(this.emailPattern) ]],
-    // password: ['',[Validators.required,Validators.minLength(6)]],
+    lastname: ['',[Validators.required]],
+    mobilenumber: ['',[Validators.required, Validators.maxLength(10), Validators.pattern(/^[6-9]\d{9}$/)]],
+    email: ['',[Validators.email, Validators.required,Validators.pattern(this.emailPattern) ]],
+    password: ['',[Validators.required,Validators.minLength(6)]],
   });
 
 
@@ -67,20 +68,31 @@ export class SignupComponent {
   // }
 
   registerUser() {
-    this.user = this.registerForm.value;
+    this.dataModel = this.registerForm.value;
     this.authDetailService
-      .saveUserTyped(this.user)
-      .subscribe((response: UserInfo) => {
+      .saveUserTyped(this.dataModel)
+      .subscribe((response: dataModel) => {
         console.log(response);
-        // this.users.push({ name: response.name});
-        // this.usersTyped.push({
-        //   name: response.name,
-        //   //job: response.job,
-        //   id: response.id,
+        // this.dataModel.push({ 
+        //   firstName: response.firstName,
+        //   lastName: response.lastName,
+        //   mobileNumber: response.mobileNumber,
+        //   email: response.email,
+        //   password: response.password
+        // });
+        // this.dataModel.push({
+        //   firstName: response.firstName,
+        //   lastName: response.lastName,
+        //   mobileNumber: response.mobileNumber,
+        //   email: response.email,
+        //   password: response.password,
         //   createdAt: response.createdAt,
+        //   id: response.id,
+         
         // });
       });
   }
+
 
   
   // ngOnInit():void  {
@@ -121,25 +133,25 @@ change(data:any) {
 
 
 
-  get name(){
-    return this.registerForm.get('name')
+  get firstName(){
+    return this.registerForm.get('firstName')
   }
 
-  // get lastname(){
-  //   return this.registerForm.get('lastname')
-  // }
+  get lastname(){
+    return this.registerForm.get('lastname')
+  }
 
-  // get mobilenumber(){
-  //   return this.registerForm.get('mobilenumber')
-  // }
+  get mobilenumber(){
+    return this.registerForm.get('mobilenumber')
+  }
 
-  // get email(){
-  //   return this.registerForm.get('email')
-  // }
+  get email(){
+    return this.registerForm.get('email')
+  }
 
-  // get password(){
-  //   return this.registerForm.get('password')
-  // }
+  get password(){
+    return this.registerForm.get('password')
+  }
 
 
 
@@ -163,5 +175,5 @@ change(data:any) {
     this.iconShow= true;
 
   }
-  ngOnInit(): void {}
+  //ngOnInit(): void {}
 }

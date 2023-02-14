@@ -9,11 +9,11 @@
         <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
           
             <div class="mb-3">
-              <input type="text" class="form-control" placeholder="First Name" formControlName="name" [ngClass]="[registerForm.controls['name'].touched && registerForm.controls['name'].invalid ? 'is-invalid':'']">
-              <span style="color: red;" *ngIf="name && name.invalid && name.touched">This input field is not valid</span>
+              <input type="text" class="form-control" placeholder="First Name" formControlName="firstName" [ngClass]="[registerForm.controls['firstName'].touched && registerForm.controls['firstName'].invalid ? 'is-invalid':'']">
+              <span style="color: red;" *ngIf="firstName && firstName.invalid && firstName.touched">This input field is not valid</span>
             </div>
     
-            <!-- <div class="mb-3">
+            <div class="mb-3">
               <input type="text" class="form-control" placeholder="Last Name" formControlName="lastname" [ngClass]="[registerForm.controls['lastname'].touched && registerForm.controls['lastname'].invalid ? 'is-invalid':'']">
               <span style="color: red;" *ngIf="lastname && lastname.invalid && lastname.touched">This input field is not valid</span>
             </div>
@@ -21,15 +21,15 @@
             <div class="mb-3">
               <input type="number" (change)="change($event)" maxlength="10" minlength="10" class="form-control" placeholder="Mobile Number" formControlName="mobilenumber" [ngClass]="[registerForm.controls['mobilenumber'].touched && registerForm.controls['mobilenumber'].invalid ? 'is-invalid':'']">
               <span style="color: red;" *ngIf="mobilenumber && mobilenumber.invalid && mobilenumber.touched">Please, Enter 10 digit Mobile Number.</span>
-            </div> -->
+            </div>
     
-            <!-- <div class="mb-3">
+            <div class="mb-3">
               <input type="email" class="form-control" placeholder="Email Address" formControlName="email" [ngClass]="[registerForm.controls['email'].touched && registerForm.controls['email'].invalid ? 'is-invalid':'']">
               <span style="color: red;" *ngIf="email && email.invalid && email.touched">This email id is not valid</span>
-            </div> -->
+            </div>
     
 
-            <!-- <div class="mb-3 position-relative">
+            <div class="mb-3 position-relative">
               <input type="password" id="password" class="form-control" placeholder="Password" formControlName="password" [ngClass]="[registerForm.controls['password'].touched && registerForm.controls['password'].invalid ? 'is-invalid':'']">
               <span style="color: red;" *ngIf="password && password.invalid && password.touched">Please Correct the password</span>
 
@@ -41,7 +41,7 @@
                <span class="eyeIconClose" *ngIf="iconHide">
                 <i (click)="eyeButtonClose()" class="bi bi-eye-slash-fill"></i>
                </span>
-            </div> -->
+            </div>
            
     
             <div class="d-flex flex-grow-1 justify-content-center align-items-center">
@@ -51,5 +51,4 @@
            
         </form>
     </div>
-   
 </div>

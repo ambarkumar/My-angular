@@ -1,0 +1,65 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "name": "ambar",
+      "lastname": "kumar",
+      "mobilenumber": 9910757777,
+      "email": "ambarkumar85@gmail.com",
+      "password": "ambar@1985",
+      "id": 2
+    },
+    {
+      "firstName": "Sohan",
+      "lastname": "Raj",
+      "mobilenumber": 9910757777,
+      "email": "sohanraj11@gmail.com",
+      "password": "soahn@1980",
+      "id": 3
+    },
+    {
+      "firstName": "Naresh",
+      "lastname": "Gujjar",
+      "mobilenumber": 9871757416,
+      "email": "naresh12@gmail.com",
+      "password": "naresh@1985",
+      "id": 4
+    },
+    {
+      "firstName": "asasa",
+      "lastname": "asasasa",
+      "mobilenumber": 9910757478,
+      "email": "asasas@gmail.com",
+      "password": "ambar@1985",
+      "id": 5
+    },
+    {
+      "firstName": "Ranjit",
+      "lastname": "Jha",
+      "mobilenumber": 9925361425,
+      "email": "ranjit@gmail.com",
+      "password": "ambar@1985",
+      "id": 6
+    },
+    {
+      "firstName": "kanika",
+      "lastname": "kumari",
+      "mobilenumber": 9876543214,
+      "email": "kanika@gmail.com",
+      "password": "ambar@1985",
+      "id": 7
+    },
+    {
+      "firstName": "Ranjita",
+      "lastname": "kumari",
+      "mobilenumber": 9910123456,
+      "email": "ranjita@gmail.com",
+      "password": "ambar@1985",
+      "id": 8
+    }
+  ]
+}
