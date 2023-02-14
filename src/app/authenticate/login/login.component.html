@@ -1,0 +1,40 @@
+<div class="authenticationPage">
+    <div class="d-flex authWrapper">
+        <li><a [routerLink]="'/login'"  [ngClass]=" {'active-tab': tab==1 }"><span (click)=" tab = 1">Login</span></a></li>
+        <li><a [routerLink]="'/signup'" [ngClass]=" {'active-tab': tab==2 }"><span (click)=" tab = 2">Sign up</span></a></li>
+    </div>
+
+    <div class="tab-panel" *ngIf="tab==1">
+        <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Email Address" formControlName="email" [ngClass]="[loginForm.controls['email'].touched && loginForm.controls['email'].invalid ? 'is-invalid':'']">
+              <!-- <span style="color: red;" *ngIf="common['email'].errors">Please enter the email id</span> -->
+              <div style="color: red;" *ngIf="common['email'].errors?.['required'] && common['email'].invalid && common['email'].touched" >
+                Name is required.
+              </div>
+              <div style="color: red;" *ngIf="common['email'].errors?.['minlength'] && common['email'].invalid && common['email'].touched">
+                Name must be at least 4 characters long.
+              </div>
+            </div>
+    
+
+            <div class="mb-3 position-relative">
+              <input type="password" class="form-control" placeholder="Password" formControlName="password" [ngClass]="[loginForm.controls['password'].touched && loginForm.controls['password'].invalid ? 'is-invalid':'']">
+              <span style="color: red;" *ngIf="common['password'].errors && common['password'].invalid && common['password'].touched">Please enter the password</span>
+            </div>
+
+            <!-- (click)="c('Save click')" -->
+    
+          
+            <div class="d-flex flex-grow-1 justify-content-center align-items-center">
+              <button [disabled]="loginForm.invalid" class="btn btn-dark">Submit</button>
+            </div>
+          </form>
+
+          <div class="text-center mt-2">
+            <span class="forgot mt-1 text-center"><a [routerLink]="'/recover-password'">Forgot Password</a></span>
+          </div>
+    </div>
+   
+
+</div>

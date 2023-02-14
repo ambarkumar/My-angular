@@ -1,1 +1,147 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+@import 'ngx-toastr/toastr';
+/* Importing Bootstrap SCSS file. */
+// @import '~bootstrap/scss/bootstrap';
+
+.was-validated .form-select:valid, .form-select.ng-valid {
+    border: 1px solid green;
+}
+
+.was-validated .form-control:valid, .form-control.ng-valid {
+    border: 1px solid green;
+}
+
+.was-validated .form-control:invalid, .form-control.is-invalid {
+    background-image: none;
+}
+
+.eyeIconOpen {
+    position: absolute;
+    right: 10px;
+    top: 6px;
+    cursor: pointer;
+}
+
+.eyeIconClose {
+    position: absolute;
+    right: 10px;
+    top: 6px;
+    cursor: pointer;
+}
+
+.authWrapper {
+    position: initial;
+    top: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.forgot {
+    text-align: center;
+    cursor: pointer;
+    & > a {
+        color: #000;
+        text-decoration: none;
+    }
+}
+
+.authenticationPage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #e6e6e6;
+    border-radius: 30px;
+    border-bottom: none;
+    align-items: center;
+    border: 1px solid #e6e6e6;
+    flex-basis: 100%;
+    margin: 30px auto;
+    max-width: 745px;
+    min-height: 420px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    & > .authWrapper {
+        grid-gap: 10px;
+        background-color: transparent;
+        margin-bottom: 20px;
+        & > li{
+            cursor: pointer; 
+            list-style: none;
+            display: flex;
+            & > a {
+                font-size: 28px;
+                text-decoration: none;
+                color: #fff;
+                font-weight: 700;
+                padding: 10px 10px;
+                border-radius: 42px;
+                line-height: 22px;
+                &:hover{
+                    color: #fff;
+                }
+            }
+            & a.active-tab{
+                color: #000;
+                text-decoration: none;
+              }
+        }
+    }
+}
+
+.tab-panel {
+    width: 64%;
+}
+
+.tab-panel input {
+    border-radius: 20px;
+}
+
+.tab-panel button{
+    border-radius: 20px;
+}
+button {
+    border-radius: 20px!important;
+}
+button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.roundClass {
+    background-color: #000;
+    padding: 2px;
+    border-radius: 20px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin-bottom: 10px;
+    & > a {
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
